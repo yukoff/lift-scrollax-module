@@ -10,7 +10,7 @@ liftEdition in ThisBuild <<= liftVersion apply { _.substring(0,3) }
 
 moduleName <<= (name, liftEdition) { (n, e) =>  n + "_" + e }
 
-crossScalaVersions := Seq("2.11.7", "2.10.4", "2.9.2", "2.9.1-1", "2.9.1", "2.8.1")
+crossScalaVersions := Seq("2.11.7", "2.10.4", "2.9.2", "2.9.1-1", "2.9.1")
 
 scalacOptions ++= Seq("-deprecation") // "-feature" can't be used as long as we build using 2.9.x
 
@@ -33,13 +33,11 @@ libraryDependencies <++= (liftVersion,liftEdition,version) { (v,e,mv) =>
 
 libraryDependencies <++= scalaVersion { sv =>
   (sv match {
-      case "2.8.1" => "org.specs2" %% "specs2" % "1.5" % "test"
       case "2.9.2" | "2.9.1" | "2.9.1-1" => "org.specs2" %% "specs2" % "1.12.4" % "test"
       case "2.10.4" => "org.specs2" %% "specs2" % "1.14" % "test"
       case _ => "org.specs2" %% "specs2" % "3.7" % "test"
  }) ::
   (sv match {
-      case "2.8.1" => "org.scalacheck" %% "scalacheck" % "1.8" % "test"
       case "2.9.2" | "2.9.1" | "2.9.1-1" => "org.scalacheck" %% "scalacheck" % "1.10.1" % "test"
       case _ => "org.scalacheck" %% "scalacheck" % "1.13.0" % "test"
       }) ::
@@ -47,8 +45,8 @@ libraryDependencies <++= scalaVersion { sv =>
 }
 
 libraryDependencies ++= {
-  //"ch.qos.logback" % "logback-classic" % "1.0.0" % "provided" :: 1.1.6
-  "ch.qos.logback" % "logback-classic" % "1.1.6" % "provided" ::
+  //"ch.qos.logback" % "logback-classic" % "1.0.0" % "provided" ::
+  //"ch.qos.logback" % "logback-classic" % "1.1.6" % "provided" ::
   //"log4j" % "log4j" % "1.2.16" % "provided" ::
   Nil
 }
