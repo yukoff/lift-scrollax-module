@@ -53,7 +53,7 @@ Put the following in your project build.sbt files lift `libraryDependencies` sec
     "net.liftmodules" %% "moduleName_x1.y1 % "x2.y2[.z2][-SNAPSHOT/rcx/mx]"
 ```
 or if you are using Maven
-```text.xml.pom
+```xml
     <dependency>
       <groupId>net.liftmodules</groupId>
       <artifactId>moduleName_x1.y1_a.b.c</artifactId>
@@ -70,7 +70,7 @@ For example:
     "net.liftmodules" %% "scrollax_2.6 % "1.0.0-SNAPSHOT"
 ```
 or for Maven
-```text.xml.pom
+```xml
     <dependency>
       <groupId>net.liftmodules</groupId>
       <artifactId>scrollax_2.6_2.11.7</artifactId>
@@ -99,7 +99,7 @@ Put the following into your lift Boot
 
 Put something like the following in head section of your Lift template(s)
 (see below for available names)
-```text.html.basic
+```html
     <script type="text/javascript" src="/classpath/scrollax/[script file name]"></script>
 ```
 
